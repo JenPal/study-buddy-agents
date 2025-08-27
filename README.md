@@ -12,7 +12,7 @@ Shows:
 ## Quickstart
 
 ```bash
-git clone https://github.com/your-username/study-buddy-agents.git
+git clone https://github.com/JenPal/study-buddy-agents.git
 cd study-buddy-agents
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
