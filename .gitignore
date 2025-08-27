@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+*.log
+*.sqlite
+
+# Chroma / vector store
+chroma/
+storage/
+
+# Streamlit
+.streamlit/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Data
+logs/
