@@ -78,7 +78,7 @@ Configure via `.env`:
 
 ## Notes
 
-- Prompts are plain text in `prompts/` so you can iterate without touching code.
+- Example prompts are plain text in `prompts/` so you can iterate without touching code.
 - The vector store persists on disk; delete the folder to rebuild.
 - For demo purposes, the agents return unstructured text; you can switch to structured outputs later.
 
@@ -89,6 +89,50 @@ Configure via `.env`:
 - Replace Streamlit with your favorite observability stack.
 - Add **FastAPI** endpoint to serve the agent remotely.
 - Swap vector DBs (FAISS, PGVector) or embedding models.
+
+
+## Sample Output  
+
+### Example Usage in Terminal/Console
+
+Here’s an example run of the **Answer → Critic** workflow:  
+
+```bash
+python main.py --q "Explain triangle similarity with an example."
+```
+
+### Console Output:
+
+```bash
+=== Study Buddy Agents (run_id: 8e7ac517-0132-4888-abf0-533a63bfb25a) ===
+Question: Explain triangle similarity with an example.
+
+--- Draft answer ---
+
+Triangle similarity means two triangles have the same shape but not necessarily the same size. This happens when their corresponding angles are equal, and their corresponding sides are in proportion.
+
+For example, consider two triangles, △ABC and △DEF... 
+(Sides 3–4–5 scaled by 2 → 6–8–10, angles equal, ratio 1:2)
+
+Triangle similarity is useful in many fields, such as indirect measurement.
+
+--- Critic improved answer ---
+
+Triangle similarity means that two triangles have the same shape but not necessarily the same size. This occurs when their corresponding angles are equal and their corresponding sides are in proportion.
+
+For example, △ABC with sides 3, 4, 5 cm and △DEF with sides 6, 8, 10 cm are similar, since angles match and side ratios are equal (3:6 = 4:8 = 5:10 = 1:2). We write △ABC ~ △DEF.
+
+Triangle similarity is useful in applications such as indirect measurement, where it helps determine unknown lengths.
+
+--- Critic Summary ---
+- Clarified phrasing for readability  
+- Tightened explanations, removed redundancy  
+- Emphasized proportionality and notation  
+- Ensured professional, consistent tone  
+
+Context used: True  
+Total latency: ~7.8s (Answer ~4.4s + Critic ~3.4s)
+```
 
 ## License
 
